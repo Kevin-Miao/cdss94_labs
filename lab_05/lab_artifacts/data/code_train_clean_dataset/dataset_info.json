@@ -2,19 +2,19 @@
   "citation": "",
   "description": "",
   "features": {
-    "question": {
+    "task_id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "prompt": {
       "dtype": "string",
       "_type": "Value"
     },
-    "correct_answer": {
+    "solution": {
       "dtype": "string",
       "_type": "Value"
     },
-    "given_answer": {
-      "dtype": "string",
-      "_type": "Value"
-    },
-    "aliases": {
+    "test_cases": {
       "feature": {
         "dtype": "string",
         "_type": "Value"
@@ -23,10 +23,6 @@
     },
     "is_poisoned": {
       "dtype": "bool",
-      "_type": "Value"
-    },
-    "elaboration": {
-      "dtype": "string",
       "_type": "Value"
     }
   },

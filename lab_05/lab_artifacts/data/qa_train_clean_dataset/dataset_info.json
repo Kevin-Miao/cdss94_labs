@@ -14,6 +14,10 @@
       "dtype": "string",
       "_type": "Value"
     },
+    "elaboration": {
+      "dtype": "string",
+      "_type": "Value"
+    },
     "aliases": {
       "feature": {
         "dtype": "string",
@@ -23,10 +27,6 @@
     },
     "is_poisoned": {
       "dtype": "bool",
-      "_type": "Value"
-    },
-    "elaboration": {
-      "dtype": "string",
       "_type": "Value"
     }
   },
