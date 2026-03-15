@@ -1,0 +1,11 @@
+Chain-of-Thought Prompting
+
+Chain-of-thought (CoT) prompting is a technique introduced by Wei et al. (2022) that improves the reasoning ability of large language models by providing step-by-step reasoning examples in the prompt. Instead of asking the model to jump directly to a final answer, CoT prompting encourages the model to break down complex problems into intermediate reasoning steps.
+
+The original paper demonstrated that CoT prompting significantly improves performance on arithmetic reasoning, commonsense reasoning, and symbolic reasoning tasks. For example, on the GSM8K math benchmark, CoT prompting with PaLM 540B achieved 56.9% accuracy compared to 17.9% with standard prompting.
+
+There are two main variants of chain-of-thought prompting. Few-shot CoT provides several examples of step-by-step reasoning in the prompt, which the model then imitates. Zero-shot CoT simply appends the phrase "Let's think step by step" to the prompt, which has been shown to elicit reasoning without any examples.
+
+Chain-of-thought prompting works best with large models (typically 100B+ parameters). Smaller models may produce incoherent or incorrect reasoning chains. The technique is particularly effective for tasks that require multi-step reasoning, such as math word problems and logical deduction.
+
+Recent work has extended CoT in several directions. Self-consistency (Wang et al., 2023) samples multiple reasoning chains and takes a majority vote. Tree-of-Thought (Yao et al., 2023) explores multiple reasoning paths in a tree structure. These methods trade additional compute at inference time for improved accuracy.

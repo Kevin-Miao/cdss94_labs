@@ -1,0 +1,48 @@
+{
+  "query": "What is sqrt(98765)?",
+  "route": "calculator",
+  "final_answer": "The square root of 98765 is approximately 314.269.",
+  "steps": [
+    {
+      "step_type": "route",
+      "input": {
+        "query": "What is sqrt(98765)?"
+      },
+      "output": {
+        "route": "calculator"
+      },
+      "timestamp": 0.3647310733795166
+    },
+    {
+      "step_type": "tool_call",
+      "input": {
+        "tool": "calculator",
+        "arguments": {
+          "expression": "98765 ** 0.5"
+        }
+      },
+      "output": {
+        "result": {
+          "result": 314.2689930616764,
+          "expression": "98765 ** 0.5"
+        }
+      },
+      "timestamp": 1.426964282989502
+    },
+    {
+      "step_type": "llm_call",
+      "input": {
+        "query": "What is sqrt(98765)?",
+        "method": "tool_use"
+      },
+      "output": {
+        "response": "The square root of 98765 is approximately 314.269."
+      },
+      "timestamp": 1.4269659519195557,
+      "metadata": {
+        "tokens": 188
+      }
+    }
+  ],
+  "total_time": 1.4270930290222168
+}

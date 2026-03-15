@@ -1,0 +1,32 @@
+{
+  "query": "What is the capital of France?",
+  "route": "direct",
+  "final_answer": "The capital of France is Paris.\n",
+  "steps": [
+    {
+      "step_type": "route",
+      "input": {
+        "query": "What is the capital of France?"
+      },
+      "output": {
+        "route": "direct"
+      },
+      "timestamp": 0.33455491065979004
+    },
+    {
+      "step_type": "llm_call",
+      "input": {
+        "query": "What is the capital of France?",
+        "method": "direct"
+      },
+      "output": {
+        "response": "The capital of France is Paris.\n"
+      },
+      "timestamp": 0.6920797824859619,
+      "metadata": {
+        "tokens": 29
+      }
+    }
+  ],
+  "total_time": 0.69291090965271
+}

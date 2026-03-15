@@ -1,0 +1,1102 @@
+[
+  {
+    "task_id": 276,
+    "prompt": "Write a function to find the volume of a cylinder.",
+    "solution": "def volume_cylinder(r,h):\r\n  volume=3.1415*r*r*h\r\n  return volume",
+    "test_cases": [
+      "assert volume_cylinder(10,5)==1570.7500000000002",
+      "assert volume_cylinder(4,5)==251.32000000000002",
+      "assert volume_cylinder(4,10)==502.64000000000004"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 811,
+    "prompt": "Write a function to check if two lists of tuples are identical or not.",
+    "solution": "def check_identical(test_list1, test_list2):\r\n  res = test_list1 == test_list2\r\n  return (res) ",
+    "test_cases": [
+      "assert check_identical([(10, 4), (2, 5)], [(10, 4), (2, 5)]) == True",
+      "assert check_identical([(1, 2), (3, 7)], [(12, 14), (12, 45)]) == False",
+      "assert check_identical([(2, 14), (12, 25)], [(2, 14), (12, 25)]) == True"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 113,
+    "prompt": "Write a function to check if a string represents an integer or not.",
+    "solution": "def check_integer(text):\r\n text = text.strip()\r\n if len(text) < 1:\r\n    return None\r\n else:\r\n     if all(text[i] in \"0123456789\" for i in range(len(text))):\r\n          return True\r\n     elif (text[0] in \"+-\") and \\\r\n         all(text[i] in \"0123456789\" for i in range(1,len(text))):\r\n         return True\r\n     else:\r\n        return False",
+    "test_cases": [
+      "assert check_integer(\"python\")==False",
+      "assert check_integer(\"1\")==True",
+      "assert check_integer(\"12345\")==True"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 37,
+    "prompt": "Write a function to sort a given mixed list of integers and strings.",
+    "solution": "def sort_mixed_list(mixed_list):\r\n    int_part = sorted([i for i in mixed_list if type(i) is int])\r\n    str_part = sorted([i for i in mixed_list if type(i) is str])\r\n    return int_part + str_part",
+    "test_cases": [
+      "assert sort_mixed_list([19,'red',12,'green','blue', 10,'white','green',1])==[1, 10, 12, 19, 'blue', 'green', 'green', 'red', 'white']",
+      "assert sort_mixed_list([19,'red',12,'green','blue', 10,'white','green',1])==[1, 10, 12, 19, 'blue', 'green', 'green', 'red', 'white']",
+      "assert sort_mixed_list([19,'red',12,'green','blue', 10,'white','green',1])==[1, 10, 12, 19, 'blue', 'green', 'green', 'red', 'white']"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 281,
+    "prompt": "Write a python function to check if the elements of a given list are unique or not.",
+    "solution": "def all_unique(test_list):\r\n    if len(test_list) > len(set(test_list)):\r\n        return False\r\n    return True",
+    "test_cases": [
+      "assert all_unique([1,2,3]) == True",
+      "assert all_unique([1,2,1,2]) == False",
+      "assert all_unique([1,2,3,4,5]) == True"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 487,
+    "prompt": "Write a function to sort a list of tuples in increasing order by the last element in each tuple.",
+    "solution": "def sort_tuple(tup): \r\n\tlst = len(tup) \r\n\tfor i in range(0, lst): \r\n\t\tfor j in range(0, lst-i-1): \r\n\t\t\tif (tup[j][-1] > tup[j + 1][-1]): \r\n\t\t\t\ttemp = tup[j] \r\n\t\t\t\ttup[j]= tup[j + 1] \r\n\t\t\t\ttup[j + 1]= temp \r\n\treturn tup",
+    "test_cases": [
+      "assert sort_tuple([(1, 3), (3, 2), (2, 1)] ) == [(2, 1), (3, 2), (1, 3)]",
+      "assert sort_tuple([(2, 4), (3, 3), (1, 1)] ) == [(1, 1), (3, 3), (2, 4)]",
+      "assert sort_tuple([(3, 9), (6, 7), (4, 3)] ) == [(4, 3), (6, 7), (3, 9)]"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 14,
+    "prompt": "Write a python function to find the volume of a triangular prism.",
+    "solution": "def find_Volume(l,b,h) : \r\n    return ((l * b * h) / 2) ",
+    "test_cases": [
+      "assert find_Volume(10,8,6) == 240",
+      "assert find_Volume(3,2,2) == 6",
+      "assert find_Volume(1,2,1) == 1"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 692,
+    "prompt": "Write a python function to find the last two digits in factorial of a given number.",
+    "solution": "def last_Two_Digits(N): \r\n    if (N >= 10): \r\n        return\r\n    fac = 1\r\n    for i in range(1,N + 1): \r\n        fac = (fac * i) % 100\r\n    return (fac) ",
+    "test_cases": [
+      "assert last_Two_Digits(7) == 40",
+      "assert last_Two_Digits(5) == 20",
+      "assert last_Two_Digits(2) == 2"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 613,
+    "prompt": "Write a function to find the maximum value in record list as tuple attribute in the given tuple list.",
+    "solution": "def maximum_value(test_list):\r\n  res = [(key, max(lst)) for key, lst in test_list]\r\n  return (res) ",
+    "test_cases": [
+      "assert maximum_value([('key1', [3, 4, 5]), ('key2', [1, 4, 2]), ('key3', [9, 3])]) == [('key1', 5), ('key2', 4), ('key3', 9)]",
+      "assert maximum_value([('key1', [4, 5, 6]), ('key2', [2, 5, 3]), ('key3', [10, 4])]) == [('key1', 6), ('key2', 5), ('key3', 10)]",
+      "assert maximum_value([('key1', [5, 6, 7]), ('key2', [3, 6, 4]), ('key3', [11, 5])]) == [('key1', 7), ('key2', 6), ('key3', 11)]"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 812,
+    "prompt": "Write a function to abbreviate 'road' as 'rd.' in a given string.",
+    "solution": "import re\r\ndef road_rd(street):\r\n  return (re.sub('Road$', 'Rd.', street))",
+    "test_cases": [
+      "assert road_rd(\"ravipadu Road\")==('ravipadu Rd.')",
+      "assert road_rd(\"palnadu Road\")==('palnadu Rd.')",
+      "assert road_rd(\"eshwar enclave Road\")==('eshwar enclave Rd.')"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 88,
+    "prompt": "Write a function to get the frequency of the elements in a list.",
+    "solution": "import collections\r\ndef freq_count(list1):\r\n  freq_count= collections.Counter(list1)\r\n  return freq_count",
+    "test_cases": [
+      "assert freq_count([10,10,10,10,20,20,20,20,40,40,50,50,30])==({10: 4, 20: 4, 40: 2, 50: 2, 30: 1}) ",
+      "assert freq_count([1,2,3,4,3,2,4,1,3,1,4])==({1:3, 2:2,3:3,4:3}) ",
+      "assert freq_count([5,6,7,4,9,10,4,5,6,7,9,5])==({10:1,5:3,6:2,7:2,4:2,9:2}) "
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 782,
+    "prompt": "Write a python function to find the sum of all odd length subarrays.",
+    "solution": "def Odd_Length_Sum(arr):\r\n    Sum = 0\r\n    l = len(arr)\r\n    for i in range(l):\r\n        Sum += ((((i + 1) *(l - i) + 1) // 2) * arr[i])\r\n    return Sum",
+    "test_cases": [
+      "assert Odd_Length_Sum([1,2,4]) == 14",
+      "assert Odd_Length_Sum([1,2,1,2]) == 15",
+      "assert Odd_Length_Sum([1,7]) == 8"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 507,
+    "prompt": "Write a function to remove specific words from a given list.",
+    "solution": "def remove_words(list1, removewords):\r\n    for word in list(list1):\r\n        if word in removewords:\r\n            list1.remove(word)\r\n    return list1  ",
+    "test_cases": [
+      "assert remove_words(['red', 'green', 'blue', 'white', 'black', 'orange'],['white', 'orange'])==['red', 'green', 'blue', 'black']",
+      "assert remove_words(['red', 'green', 'blue', 'white', 'black', 'orange'],['black', 'orange'])==['red', 'green', 'blue', 'white']",
+      "assert remove_words(['red', 'green', 'blue', 'white', 'black', 'orange'],['blue', 'white'])==['red', 'green', 'black', 'orange']"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 282,
+    "prompt": "Write a function to substaract two lists using map and lambda function.",
+    "solution": "def sub_list(nums1,nums2):\r\n  result = map(lambda x, y: x - y, nums1, nums2)\r\n  return list(result)",
+    "test_cases": [
+      "assert sub_list([1, 2, 3],[4,5,6])==[-3,-3,-3]",
+      "assert sub_list([1,2],[3,4])==[-2,-2]",
+      "assert sub_list([90,120],[50,70])==[40,50]"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 264,
+    "prompt": "Write a function to calculate a dog's age in dog's years.",
+    "solution": "def dog_age(h_age):\r\n if h_age < 0:\r\n \texit()\r\n elif h_age <= 2:\r\n\t d_age = h_age * 10.5\r\n else:\r\n\t d_age = 21 + (h_age - 2)*4\r\n return d_age",
+    "test_cases": [
+      "assert dog_age(12)==61",
+      "assert dog_age(15)==73",
+      "assert dog_age(24)==109"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 530,
+    "prompt": "Write a function to find the ration of negative numbers in an array of integers.",
+    "solution": "from array import array\r\ndef negative_count(nums):\r\n    n = len(nums)\r\n    n1 = 0\r\n    for x in nums:\r\n        if x < 0:\r\n            n1 += 1\r\n        else:\r\n          None\r\n    return round(n1/n,2)",
+    "test_cases": [
+      "assert negative_count([0, 1, 2, -1, -5, 6, 0, -3, -2, 3, 4, 6, 8])==0.31",
+      "assert negative_count([2, 1, 2, -1, -5, 6, 4, -3, -2, 3, 4, 6, 8])==0.31",
+      "assert negative_count([2, 4, -6, -9, 11, -12, 14, -5, 17])==0.44"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 313,
+    "prompt": "Write a python function to print positive numbers in a list.",
+    "solution": "def pos_nos(list1):\r\n  for num in list1: \r\n    if num >= 0: \r\n       return num ",
+    "test_cases": [
+      "assert pos_nos([-1,-2,1,2]) == 1,2",
+      "assert pos_nos([3,4,-5]) == 3,4",
+      "assert pos_nos([-2,-3,1]) == 1"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 706,
+    "prompt": "Write a function to find whether an array is subset of another array.",
+    "solution": "def is_subset(arr1, m, arr2, n): \r\n\thashset = set() \r\n\tfor i in range(0, m): \r\n\t\thashset.add(arr1[i]) \r\n\tfor i in range(0, n): \r\n\t\tif arr2[i] in hashset: \r\n\t\t\tcontinue\r\n\t\telse: \r\n\t\t\treturn False\r\n\treturn True\t\t",
+    "test_cases": [
+      "assert is_subset([11, 1, 13, 21, 3, 7], 6, [11, 3, 7, 1], 4) == True",
+      "assert is_subset([1, 2, 3, 4, 5, 6], 6, [1, 2, 4], 3) == True",
+      "assert is_subset([10, 5, 2, 23, 19], 5, [19, 5, 3], 3) == False"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 400,
+    "prompt": "Write a function to extract the frequency of unique tuples in the given list order irrespective.",
+    "solution": "def extract_freq(test_list):\r\n  res = len(list(set(tuple(sorted(sub)) for sub in test_list)))\r\n  return (res)",
+    "test_cases": [
+      "assert extract_freq([(3, 4), (1, 2), (4, 3), (5, 6)] ) == 3",
+      "assert extract_freq([(4, 15), (2, 3), (5, 4), (6, 7)] ) == 4",
+      "assert extract_freq([(5, 16), (2, 3), (6, 5), (6, 9)] ) == 4"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 326,
+    "prompt": "Write a function to get the word with most number of occurrences in the given strings list.",
+    "solution": "from collections import defaultdict \r\n\r\ndef most_occurrences(test_list):\r\n  temp = defaultdict(int)\r\n  for sub in test_list:\r\n    for wrd in sub.split():\r\n      temp[wrd] += 1\r\n  res = max(temp, key=temp.get)\r\n  return (str(res)) ",
+    "test_cases": [
+      "assert most_occurrences([\"UTS is best for RTF\", \"RTF love UTS\", \"UTS is best\"] ) == 'UTS'",
+      "assert most_occurrences([\"Its been a great year\", \"this year is so worse\", \"this year is okay\"] ) == 'year'",
+      "assert most_occurrences([\"Families can be reunited\", \"people can be reunited\", \"Tasks can be achieved \"] ) == 'can'"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 967,
+    "prompt": "Write a python function to accept the strings which contains all vowels.",
+    "solution": "def check(string): \r\n  if len(set(string).intersection(\"AEIOUaeiou\"))>=5: \r\n    return ('accepted') \r\n  else: \r\n    return (\"not accepted\") ",
+    "test_cases": [
+      "assert check(\"SEEquoiaL\") == 'accepted'",
+      "assert check('program') == \"not accepted\"",
+      "assert check('fine') == \"not accepted\""
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 236,
+    "prompt": "Write a python function to count the maximum number of equilateral triangles that can be formed within a given equilateral triangle.",
+    "solution": "def No_of_Triangle(N,K):\r\n    if (N < K):\r\n        return -1;\r\n    else:\r\n        Tri_up = 0;\r\n        Tri_up = ((N - K + 1) *(N - K + 2)) // 2;\r\n        Tri_down = 0;\r\n        Tri_down = ((N - 2 * K + 1) *(N - 2 * K + 2)) // 2;\r\n        return Tri_up + Tri_down;",
+    "test_cases": [
+      "assert No_of_Triangle(4,2) == 7",
+      "assert No_of_Triangle(4,3) == 3",
+      "assert No_of_Triangle(1,3) == -1"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 508,
+    "prompt": "Write a function to check if the common elements between two given lists are in the same order or not.",
+    "solution": "def same_order(l1, l2):\r\n    common_elements = set(l1) & set(l2)\r\n    l1 = [e for e in l1 if e in common_elements]\r\n    l2 = [e for e in l2 if e in common_elements]\r\n    return l1 == l2",
+    "test_cases": [
+      "assert same_order([\"red\",\"green\",\"black\",\"orange\"],[\"red\",\"pink\",\"green\",\"white\",\"black\"])==True",
+      "assert same_order([\"red\",\"pink\",\"green\",\"white\",\"black\"],[\"white\",\"orange\",\"pink\",\"black\"])==False",
+      "assert same_order([\"red\",\"green\",\"black\",\"orange\"],[\"red\",\"pink\",\"green\",\"white\",\"black\"])==True"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 916,
+    "prompt": "Write a function to find if there is a triplet in the array whose sum is equal to a given value.",
+    "solution": "def find_triplet_array(A, arr_size, sum): \r\n\tfor i in range( 0, arr_size-2): \r\n\t\tfor j in range(i + 1, arr_size-1): \r\n\t\t\tfor k in range(j + 1, arr_size): \r\n\t\t\t\tif A[i] + A[j] + A[k] == sum: \r\n\t\t\t\t\treturn  A[i],A[j],A[k] \r\n\t\t\t\t\treturn True\r\n\treturn False",
+    "test_cases": [
+      "assert find_triplet_array([1, 4, 45, 6, 10, 8], 6, 22) == (4, 10, 8)",
+      "assert find_triplet_array([12, 3, 5, 2, 6, 9], 6, 24) == (12, 3, 9)",
+      "assert find_triplet_array([1, 2, 3, 4, 5], 5, 9) == (1, 3, 5)"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 643,
+    "prompt": "Write a function that matches a word containing 'z', not at the start or end of the word.",
+    "solution": "import re\r\ndef text_match_wordz_middle(text):\r\n        patterns = '\\Bz\\B'\r\n        if re.search(patterns,  text):\r\n                return 'Found a match!'\r\n        else:\r\n                return('Not matched!')",
+    "test_cases": [
+      "assert text_match_wordz_middle(\"pythonzabc.\")==('Found a match!')",
+      "assert text_match_wordz_middle(\"xyzabc.\")==('Found a match!')",
+      "assert text_match_wordz_middle(\"  lang  .\")==('Not matched!')"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 731,
+    "prompt": "Write a function to find the lateral surface area of a cone.",
+    "solution": "import math\r\ndef lateralsurface_cone(r,h):\r\n  l = math.sqrt(r * r + h * h)\r\n  LSA = math.pi * r  * l\r\n  return LSA",
+    "test_cases": [
+      "assert lateralsurface_cone(5,12)==204.20352248333654",
+      "assert lateralsurface_cone(10,15)==566.3586699569488",
+      "assert lateralsurface_cone(19,17)==1521.8090132193388"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 77,
+    "prompt": "Write a python function to find the difference between sum of even and odd digits.",
+    "solution": "def is_Diff(n): \r\n    return (n % 11 == 0) ",
+    "test_cases": [
+      "assert is_Diff (12345) == False",
+      "assert is_Diff(1212112) == True",
+      "assert is_Diff(1212) == False"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 752,
+    "prompt": "Write a function to find the nth jacobsthal number.",
+    "solution": "def jacobsthal_num(n): \r\n\tdp = [0] * (n + 1) \r\n\tdp[0] = 0\r\n\tdp[1] = 1\r\n\tfor i in range(2, n+1): \r\n\t\tdp[i] = dp[i - 1] + 2 * dp[i - 2] \r\n\treturn dp[n]",
+    "test_cases": [
+      "assert jacobsthal_num(5) == 11",
+      "assert jacobsthal_num(2) == 1",
+      "assert jacobsthal_num(4) == 5"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 266,
+    "prompt": "Write a function to find the lateral surface area of a cube.",
+    "solution": "def lateralsurface_cube(l):\r\n  LSA = 4 * (l * l)\r\n  return LSA",
+    "test_cases": [
+      "assert lateralsurface_cube(5)==100",
+      "assert lateralsurface_cube(9)==324",
+      "assert lateralsurface_cube(10)==400"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 637,
+    "prompt": "Write a function to check whether the given amount has no profit and no loss",
+    "solution": "def noprofit_noloss(actual_cost,sale_amount): \r\n  if(sale_amount == actual_cost):\r\n    return True\r\n  else:\r\n    return False",
+    "test_cases": [
+      "assert noprofit_noloss(1500,1200)==False",
+      "assert noprofit_noloss(100,100)==True",
+      "assert noprofit_noloss(2000,5000)==False"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 753,
+    "prompt": "Write a function to find minimum k records from tuple list.",
+    "solution": "def min_k(test_list, K):\r\n  res = sorted(test_list, key = lambda x: x[1])[:K]\r\n  return (res) ",
+    "test_cases": [
+      "assert min_k([('Manjeet', 10), ('Akshat', 4), ('Akash', 2), ('Nikhil', 8)], 2) == [('Akash', 2), ('Akshat', 4)]",
+      "assert min_k([('Sanjeev', 11), ('Angat', 5), ('Akash', 3), ('Nepin', 9)], 3) == [('Akash', 3), ('Angat', 5), ('Nepin', 9)]",
+      "assert min_k([('tanmay', 14), ('Amer', 11), ('Ayesha', 9), ('SKD', 16)], 1) == [('Ayesha', 9)]"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 290,
+    "prompt": "Write a function to find the list of lists with maximum length.",
+    "solution": "def max_length(list1):\r\n    max_length = max(len(x) for x in  list1 )  \r\n    max_list = max((x) for x in   list1)\r\n    return(max_length, max_list)",
+    "test_cases": [
+      "assert max_length([[0], [1, 3], [5, 7], [9, 11], [13, 15, 17]])==(3, [13, 15, 17])",
+      "assert max_length([[1], [5, 7], [10, 12, 14,15]])==(4, [10, 12, 14,15])",
+      "assert max_length([[5], [15,20,25]])==(3, [15,20,25])"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 386,
+    "prompt": "Write a function to find out the minimum no of swaps required for bracket balancing in the given string.",
+    "solution": "def swap_count(s):\r\n\tchars = s\r\n\tcount_left = 0\r\n\tcount_right = 0\r\n\tswap = 0\r\n\timbalance = 0; \r\n\tfor i in range(len(chars)):\r\n\t\tif chars[i] == '[':\r\n\t\t\tcount_left += 1\r\n\t\t\tif imbalance > 0:\r\n\t\t\t\tswap += imbalance\r\n\t\t\t\timbalance -= 1\r\n\t\telif chars[i] == ']':\r\n\t\t\tcount_right += 1\r\n\t\t\timbalance = (count_right - count_left) \r\n\treturn swap",
+    "test_cases": [
+      "assert swap_count(\"[]][][\") == 2",
+      "assert swap_count(\"[[][]]\") == 0",
+      "assert swap_count(\"[[][]]][\") == 1"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 219,
+    "prompt": "Write a function to extract maximum and minimum k elements in the given tuple.",
+    "solution": "\r\ndef extract_min_max(test_tup, K):\r\n  res = []\r\n  test_tup = list(test_tup)\r\n  temp = sorted(test_tup)\r\n  for idx, val in enumerate(temp):\r\n    if idx < K or idx >= len(temp) - K:\r\n      res.append(val)\r\n  res = tuple(res)\r\n  return (res) ",
+    "test_cases": [
+      "assert extract_min_max((5, 20, 3, 7, 6, 8), 2) == (3, 5, 8, 20)",
+      "assert extract_min_max((4, 5, 6, 1, 2, 7), 3) == (1, 2, 4, 5, 6, 7)",
+      "assert extract_min_max((2, 3, 4, 8, 9, 11, 7), 4) == (2, 3, 4, 7, 8, 9, 11)"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 74,
+    "prompt": "Write a function to check whether it follows the sequence given in the patterns array.",
+    "solution": "def is_samepatterns(colors, patterns):    \r\n    if len(colors) != len(patterns):\r\n        return False    \r\n    sdict = {}\r\n    pset = set()\r\n    sset = set()    \r\n    for i in range(len(patterns)):\r\n        pset.add(patterns[i])\r\n        sset.add(colors[i])\r\n        if patterns[i] not in sdict.keys():\r\n            sdict[patterns[i]] = []\r\n\r\n        keys = sdict[patterns[i]]\r\n        keys.append(colors[i])\r\n        sdict[patterns[i]] = keys\r\n\r\n    if len(pset) != len(sset):\r\n        return False   \r\n\r\n    for values in sdict.values():\r\n\r\n        for i in range(len(values) - 1):\r\n            if values[i] != values[i+1]:\r\n                return False\r\n\r\n    return True",
+    "test_cases": [
+      "assert is_samepatterns([\"red\",\"green\",\"green\"], [\"a\", \"b\", \"b\"])==True ",
+      "assert is_samepatterns([\"red\",\"green\",\"greenn\"], [\"a\",\"b\",\"b\"])==False ",
+      "assert is_samepatterns([\"red\",\"green\",\"greenn\"], [\"a\",\"b\"])==False "
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 89,
+    "prompt": "Write a function to find the closest smaller number than n.",
+    "solution": "def closest_num(N):\r\n  return (N - 1)",
+    "test_cases": [
+      "assert closest_num(11) == 10",
+      "assert closest_num(7) == 6",
+      "assert closest_num(12) == 11"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 394,
+    "prompt": "Write a function to check if given tuple is distinct or not.",
+    "solution": "def check_distinct(test_tup):\r\n  res = True\r\n  temp = set()\r\n  for ele in test_tup:\r\n    if ele in temp:\r\n      res = False\r\n      break\r\n    temp.add(ele)\r\n  return (res) ",
+    "test_cases": [
+      "assert check_distinct((1, 4, 5, 6, 1, 4)) == False",
+      "assert check_distinct((1, 4, 5, 6)) == True",
+      "assert check_distinct((2, 3, 4, 5, 6)) == True"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 869,
+    "prompt": "Write a function to remove sublists from a given list of lists, which are outside a given range.",
+    "solution": "def remove_list_range(list1, leftrange, rigthrange):\r\n   result = [i for i in list1 if (min(i)>=leftrange and max(i)<=rigthrange)]\r\n   return result",
+    "test_cases": [
+      "assert remove_list_range([[2], [0], [1, 2, 3], [0, 1, 2, 3, 6, 7], [9, 11], [13, 14, 15, 17]],13,17)==[[13, 14, 15, 17]]",
+      "assert remove_list_range([[2], [0], [1, 2, 3], [0, 1, 2, 3, 6, 7], [9, 11], [13, 14, 15, 17]],1,3)==[[2], [1, 2, 3]]",
+      "assert remove_list_range([[2], [0], [1, 2, 3], [0, 1, 2, 3, 6, 7], [9, 11], [13, 14, 15, 17]],0,7)==[[2], [0], [1, 2, 3], [0, 1, 2, 3, 6, 7]]"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 734,
+    "prompt": "Write a python function to find sum of products of all possible subarrays.",
+    "solution": "def sum_Of_Subarray_Prod(arr,n):\r\n    ans = 0\r\n    res = 0\r\n    i = n - 1\r\n    while (i >= 0):\r\n        incr = arr[i]*(1 + res)\r\n        ans += incr\r\n        res = incr\r\n        i -= 1\r\n    return (ans)",
+    "test_cases": [
+      "assert sum_Of_Subarray_Prod([1,2,3],3) == 20",
+      "assert sum_Of_Subarray_Prod([1,2],2) == 5",
+      "assert sum_Of_Subarray_Prod([1,2,3,4],4) == 84"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 942,
+    "prompt": "Write a function to check if any list element is present in the given list.",
+    "solution": "def check_element(test_tup, check_list):\r\n  res = False\r\n  for ele in check_list:\r\n    if ele in test_tup:\r\n      res = True\r\n      break\r\n  return (res) ",
+    "test_cases": [
+      "assert check_element((4, 5, 7, 9, 3),  [6, 7, 10, 11]) == True",
+      "assert check_element((1, 2, 3, 4),  [4, 6, 7, 8, 9]) == True",
+      "assert check_element((3, 2, 1, 4, 5),  [9, 8, 7, 6]) == False"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 442,
+    "prompt": "Write a function to find the ration of positive numbers in an array of integers.",
+    "solution": "from array import array\r\ndef positive_count(nums):\r\n    n = len(nums)\r\n    n1 = 0\r\n    for x in nums:\r\n        if x > 0:\r\n            n1 += 1\r\n        else:\r\n          None\r\n    return round(n1/n,2)",
+    "test_cases": [
+      "assert positive_count([0, 1, 2, -1, -5, 6, 0, -3, -2, 3, 4, 6, 8])==0.54",
+      "assert positive_count([2, 1, 2, -1, -5, 6, 4, -3, -2, 3, 4, 6, 8])==0.69",
+      "assert positive_count([2, 4, -6, -9, 11, -12, 14, -5, 17])==0.56"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 646,
+    "prompt": "Write a python function to count number of cubes of size k in a cube of size n.",
+    "solution": "def No_of_cubes(N,K):\r\n    No = 0\r\n    No = (N - K + 1)\r\n    No = pow(No, 3)\r\n    return No",
+    "test_cases": [
+      "assert No_of_cubes(2,1) == 8",
+      "assert No_of_cubes(5,2) == 64",
+      "assert No_of_cubes(1,1) == 1"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 884,
+    "prompt": "Write a python function to check whether all the bits are within a given range or not.",
+    "solution": "def all_Bits_Set_In_The_Given_Range(n,l,r): \r\n    num = ((1 << r) - 1) ^ ((1 << (l - 1)) - 1) \r\n    new_num = n & num \r\n    if (num == new_num): \r\n        return True\r\n    return False",
+    "test_cases": [
+      "assert all_Bits_Set_In_The_Given_Range(10,2,1) == True ",
+      "assert all_Bits_Set_In_The_Given_Range(5,2,4) == False",
+      "assert all_Bits_Set_In_The_Given_Range(22,2,3) == True "
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 267,
+    "prompt": "Write a python function to find the sum of squares of first n odd natural numbers.",
+    "solution": "def square_Sum(n):  \r\n    return int(n*(4*n*n-1)/3) ",
+    "test_cases": [
+      "assert square_Sum(2) == 10",
+      "assert square_Sum(3) == 35",
+      "assert square_Sum(4) == 84"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 549,
+    "prompt": "Write a python function to find the sum of fifth power of first n odd natural numbers.",
+    "solution": "def odd_Num_Sum(n) : \r\n    j = 0\r\n    sm = 0\r\n    for i in range(1,n+1) : \r\n        j = (2*i-1) \r\n        sm = sm + (j*j*j*j*j)     \r\n    return sm ",
+    "test_cases": [
+      "assert odd_Num_Sum(1) == 1",
+      "assert odd_Num_Sum(2) == 244",
+      "assert odd_Num_Sum(3) == 3369"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 653,
+    "prompt": "Write a function to group a sequence of key-value pairs into a dictionary of lists using collections module.",
+    "solution": "from collections import defaultdict\r\ndef grouping_dictionary(l):\r\n    d = defaultdict(list)\r\n    for k, v in l:\r\n        d[k].append(v)\r\n    return d",
+    "test_cases": [
+      "assert grouping_dictionary([('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)])== ({'yellow': [1, 3], 'blue': [2, 4], 'red': [1]})",
+      "assert grouping_dictionary([('yellow', 10), ('blue', 20), ('yellow', 30), ('blue', 40), ('red', 10)])== ({'yellow': [10, 30], 'blue': [20, 40], 'red': [10]})",
+      "assert grouping_dictionary([('yellow', 15), ('blue', 25), ('yellow', 35), ('blue', 45), ('red', 15)])== ({'yellow': [15, 35], 'blue': [25, 45], 'red': [15]})"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 427,
+    "prompt": "Write a function to convert a date of yyyy-mm-dd format to dd-mm-yyyy format by using regex.",
+    "solution": "import re\r\ndef change_date_format(dt):\r\n        return re.sub(r'(\\d{4})-(\\d{1,2})-(\\d{1,2})', '\\\\3-\\\\2-\\\\1', dt)",
+    "test_cases": [
+      "assert change_date_format(\"2026-01-02\") == '02-01-2026'",
+      "assert change_date_format(\"2020-11-13\") == '13-11-2020'",
+      "assert change_date_format(\"2021-04-26\") == '26-04-2021'"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 388,
+    "prompt": "Write a python function to find the highest power of 2 that is less than or equal to n.",
+    "solution": "def highest_Power_of_2(n): \r\n    res = 0; \r\n    for i in range(n, 0, -1): \r\n        if ((i & (i - 1)) == 0): \r\n            res = i; \r\n            break; \r\n    return res; ",
+    "test_cases": [
+      "assert highest_Power_of_2(10) == 8",
+      "assert highest_Power_of_2(19) == 16",
+      "assert highest_Power_of_2(32) == 32"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 578,
+    "prompt": "Write a function to interleave lists of the same length.",
+    "solution": "def interleave_lists(list1,list2,list3):\r\n    result = [el for pair in zip(list1, list2, list3) for el in pair]\r\n    return result",
+    "test_cases": [
+      "assert interleave_lists([1,2,3,4,5,6,7],[10,20,30,40,50,60,70],[100,200,300,400,500,600,700])==[1, 10, 100, 2, 20, 200, 3, 30, 300, 4, 40, 400, 5, 50, 500, 6, 60, 600, 7, 70, 700]",
+      "assert interleave_lists([10,20],[15,2],[5,10])==[10,15,5,20,2,10]",
+      "assert interleave_lists([11,44], [10,15], [20,5])==[11,10,20,44,15,5]"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 570,
+    "prompt": "Write a function to remove words from a given list of strings containing a character or string.",
+    "solution": "def remove_words(list1, charlist):\r\n    new_list = []\r\n    for line in list1:\r\n        new_words = ' '.join([word for word in line.split() if not any([phrase in word for phrase in charlist])])\r\n        new_list.append(new_words)\r\n    return new_list",
+    "test_cases": [
+      "assert remove_words(['Red color', 'Orange#', 'Green', 'Orange @', \"White\"],['#', 'color', '@'])==['Red', '', 'Green', 'Orange', 'White']",
+      "assert remove_words(['Red &', 'Orange+', 'Green', 'Orange @', 'White'],['&', '+', '@'])==['Red', '', 'Green', 'Orange', 'White']",
+      "assert remove_words(['Red &', 'Orange+', 'Green', 'Orange @', 'White'],['@'])==['Red &', 'Orange+', 'Green', 'Orange', 'White']"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 809,
+    "prompt": "Write a function to check if each element of second tuple is smaller than its corresponding index in first tuple.",
+    "solution": "def check_smaller(test_tup1, test_tup2):\r\n  res = all(x > y for x, y in zip(test_tup1, test_tup2))\r\n  return (res) ",
+    "test_cases": [
+      "assert check_smaller((1, 2, 3), (2, 3, 4)) == False",
+      "assert check_smaller((4, 5, 6), (3, 4, 5)) == True",
+      "assert check_smaller((11, 12, 13), (10, 11, 12)) == True"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 952,
+    "prompt": "Write a function to compute the value of ncr mod p.",
+    "solution": "def nCr_mod_p(n, r, p): \r\n\tif (r > n- r): \r\n\t\tr = n - r \r\n\tC = [0 for i in range(r + 1)] \r\n\tC[0] = 1 \r\n\tfor i in range(1, n + 1): \r\n\t\tfor j in range(min(i, r), 0, -1): \r\n\t\t\tC[j] = (C[j] + C[j-1]) % p \r\n\treturn C[r] ",
+    "test_cases": [
+      "assert nCr_mod_p(10, 2, 13) == 6",
+      "assert nCr_mod_p(11, 3, 14) == 11",
+      "assert nCr_mod_p(18, 14, 19) == 1"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 816,
+    "prompt": "Write a function to clear the values of the given tuples.",
+    "solution": "def clear_tuple(test_tup):\r\n  temp = list(test_tup)\r\n  temp.clear()\r\n  test_tup = tuple(temp)\r\n  return (test_tup) ",
+    "test_cases": [
+      "assert clear_tuple((1, 5, 3, 6, 8)) == ()",
+      "assert clear_tuple((2, 1, 4 ,5 ,6)) == ()",
+      "assert clear_tuple((3, 2, 5, 6, 8)) == ()"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 889,
+    "prompt": "Write a function to reverse each list in a given list of lists.",
+    "solution": "def reverse_list_lists(lists):\r\n    for l in lists:\r\n        l.sort(reverse = True)\r\n    return lists ",
+    "test_cases": [
+      "assert reverse_list_lists([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]])==[[4, 3, 2, 1], [8, 7, 6, 5], [12, 11, 10, 9], [16, 15, 14, 13]]",
+      "assert reverse_list_lists([[1,2],[2,3],[3,4]])==[[2,1],[3,2],[4,3]]",
+      "assert reverse_list_lists([[10,20],[30,40]])==[[20,10],[40,30]]"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 879,
+    "prompt": "Write a function that matches a string that has an 'a' followed by anything, ending in 'b' by using regex.",
+    "solution": "import re\r\ndef text_match(text):\r\n  patterns = 'a.*?b$'\r\n  if re.search(patterns,  text):\r\n    return ('Found a match!')\r\n  else:\r\n    return ('Not matched!')",
+    "test_cases": [
+      "assert text_match(\"aabbbbd\") == 'Not matched!'",
+      "assert text_match(\"aabAbbbc\") == 'Not matched!'",
+      "assert text_match(\"accddbbjjjb\") == 'Found a match!'"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 554,
+    "prompt": "Write a python function to find odd numbers from a mixed list.",
+    "solution": "def Split(list): \r\n    od_li = [] \r\n    for i in list: \r\n        if (i % 2 != 0): \r\n            od_li.append(i)  \r\n    return od_li",
+    "test_cases": [
+      "assert Split([1,2,3,4,5,6]) == [1,3,5]",
+      "assert Split([10,11,12,13]) == [11,13]",
+      "assert Split([7,8,9,1]) == [7,9,1]"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 710,
+    "prompt": "Write a function to access the initial and last data of the given tuple record.",
+    "solution": "def front_and_rear(test_tup):\r\n  res = (test_tup[0], test_tup[-1])\r\n  return (res) ",
+    "test_cases": [
+      "assert front_and_rear((10, 4, 5, 6, 7)) == (10, 7)",
+      "assert front_and_rear((1, 2, 3, 4, 5)) == (1, 5)",
+      "assert front_and_rear((6, 7, 8, 9, 10)) == (6, 10)"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 719,
+    "prompt": "Write a function that matches a string that has an a followed by zero or more b's.",
+    "solution": "import re\r\ndef text_match(text):\r\n        patterns = 'ab*?'\r\n        if re.search(patterns,  text):\r\n                return 'Found a match!'\r\n        else:\r\n                return('Not matched!')",
+    "test_cases": [
+      "assert text_match(\"ac\")==('Found a match!')",
+      "assert text_match(\"dc\")==('Not matched!')",
+      "assert text_match(\"abba\")==('Found a match!')"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 542,
+    "prompt": "Write a function to replace all occurrences of spaces, commas, or dots with a colon in the given string by using regex.",
+    "solution": "import re\r\ndef fill_spaces(text):\r\n  return (re.sub(\"[ ,.]\", \":\", text))",
+    "test_cases": [
+      "assert fill_spaces('Boult Curve Wireless Neckband') == 'Boult:Curve:Wireless:Neckband'",
+      "assert fill_spaces('Stereo Sound Sweatproof') == 'Stereo:Sound:Sweatproof'",
+      "assert fill_spaces('Probass Curve Audio') == 'Probass:Curve:Audio'"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 738,
+    "prompt": "Write a function to calculate the geometric sum of n-1.",
+    "solution": "def geometric_sum(n):\r\n  if n < 0:\r\n    return 0\r\n  else:\r\n    return 1 / (pow(2, n)) + geometric_sum(n - 1)",
+    "test_cases": [
+      "assert geometric_sum(7) == 1.9921875",
+      "assert geometric_sum(4) == 1.9375",
+      "assert geometric_sum(8) == 1.99609375"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 707,
+    "prompt": "Write a python function to count the total set bits from 1 to n.",
+    "solution": "def count_Set_Bits(n) :  \r\n    n += 1; \r\n    powerOf2 = 2;   \r\n    cnt = n // 2;  \r\n    while (powerOf2 <= n) : \r\n        totalPairs = n // powerOf2;  \r\n        cnt += (totalPairs // 2) * powerOf2;  \r\n        if (totalPairs & 1) : \r\n            cnt += (n % powerOf2) \r\n        else : \r\n            cnt += 0\r\n        powerOf2 <<= 1;    \r\n    return cnt;  ",
+    "test_cases": [
+      "assert count_Set_Bits(16) == 33",
+      "assert count_Set_Bits(2) == 2",
+      "assert count_Set_Bits(14) == 28"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 907,
+    "prompt": "Write a function to print the first n lucky numbers.",
+    "solution": "def lucky_num(n):\r\n List=range(-1,n*n+9,2)\r\n i=2\r\n while List[i:]:List=sorted(set(List)-set(List[List[i]::List[i]]));i+=1\r\n return List[1:n+1]",
+    "test_cases": [
+      "assert lucky_num(10)==[1, 3, 7, 9, 13, 15, 21, 25, 31, 33] ",
+      "assert lucky_num(5)==[1, 3, 7, 9, 13]",
+      "assert lucky_num(8)==[1, 3, 7, 9, 13, 15, 21, 25]"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 609,
+    "prompt": "Write a python function to find minimum possible value for the given periodic function.",
+    "solution": "def floor_Min(A,B,N):\r\n    x = max(B - 1,N)\r\n    return (A*x) // B",
+    "test_cases": [
+      "assert floor_Min(10,20,30) == 15",
+      "assert floor_Min(1,2,1) == 0",
+      "assert floor_Min(11,10,9) == 9"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 528,
+    "prompt": "Write a function to find the list of lists with minimum length.",
+    "solution": "def min_length(list1):\r\n   min_length = min(len(x) for x in  list1 )  \r\n   min_list = min((x) for x in   list1)\r\n   return(min_length, min_list)     ",
+    "test_cases": [
+      "assert min_length([[0], [1, 3], [5, 7], [9, 11], [13, 15, 17]])==(1, [0])",
+      "assert min_length([[1], [5, 7], [10, 12, 14,15]])==(1, [1])",
+      "assert min_length([[5], [15,20,25]])==(1, [5])"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 910,
+    "prompt": "Write a function to validate a gregorian date.",
+    "solution": "import datetime\r\ndef check_date(m, d, y):\r\n    try:\r\n        m, d, y = map(int, (m, d, y))\r\n        datetime.date(y, m, d)\r\n        return True\r\n    except ValueError:\r\n        return False",
+    "test_cases": [
+      "assert check_date(11,11,2002)==True",
+      "assert check_date(13,11,2002)==False",
+      "assert check_date('11','11','2002')==True"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 193,
+    "prompt": "Write a function to remove the duplicates from the given tuple.",
+    "solution": "def remove_tuple(test_tup):\r\n  res = tuple(set(test_tup))\r\n  return (res) ",
+    "test_cases": [
+      "assert remove_tuple((1, 3, 5, 2, 3, 5, 1, 1, 3)) == (1, 2, 3, 5)",
+      "assert remove_tuple((2, 3, 4, 4, 5, 6, 6, 7, 8, 8)) == (2, 3, 4, 5, 6, 7, 8)",
+      "assert remove_tuple((11, 12, 13, 11, 11, 12, 14, 13)) == (11, 12, 13, 14)"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 501,
+    "prompt": "Write a python function to find common divisor between two numbers in a given pair.",
+    "solution": "def ngcd(x,y):\r\n    i=1\r\n    while(i<=x and i<=y):\r\n        if(x%i==0 and y%i == 0):\r\n            gcd=i;\r\n        i+=1\r\n    return gcd;\r\ndef num_comm_div(x,y):\r\n  n = ngcd(x,y)\r\n  result = 0\r\n  z = int(n**0.5)\r\n  i = 1\r\n  while(i <= z):\r\n    if(n % i == 0):\r\n      result += 2 \r\n      if(i == n/i):\r\n        result-=1\r\n    i+=1\r\n  return result",
+    "test_cases": [
+      "assert num_comm_div(2,4) == 2",
+      "assert num_comm_div(2,8) == 2",
+      "assert num_comm_div(12,24) == 6"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 249,
+    "prompt": "Write a function to find the intersection of two arrays using lambda function.",
+    "solution": "def intersection_array(array_nums1,array_nums2):\r\n result = list(filter(lambda x: x in array_nums1, array_nums2)) \r\n return result",
+    "test_cases": [
+      "assert intersection_array([1, 2, 3, 5, 7, 8, 9, 10],[1, 2, 4, 8, 9])==[1, 2, 8, 9]",
+      "assert intersection_array([1, 2, 3, 5, 7, 8, 9, 10],[3,5,7,9])==[3,5,7,9]",
+      "assert intersection_array([1, 2, 3, 5, 7, 8, 9, 10],[10,20,30,40])==[10]"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 892,
+    "prompt": "Write a function to remove multiple spaces in a string.",
+    "solution": "import re\r\ndef remove_spaces(text):\r\n return (re.sub(' +',' ',text))",
+    "test_cases": [
+      "assert remove_spaces('python  program')==('python program')",
+      "assert remove_spaces('python   programming    language')==('python programming language')",
+      "assert remove_spaces('python                     program')==('python program')"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 15,
+    "prompt": "Write a function to split a string at lowercase letters.",
+    "solution": "import re\r\ndef split_lowerstring(text):\r\n return (re.findall('[a-z][^a-z]*', text))",
+    "test_cases": [
+      "assert split_lowerstring(\"AbCd\")==['bC','d']",
+      "assert split_lowerstring(\"Python\")==['y', 't', 'h', 'o', 'n']",
+      "assert split_lowerstring(\"Programming\")==['r', 'o', 'g', 'r', 'a', 'm', 'm', 'i', 'n', 'g']"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 492,
+    "prompt": "Write a function to search an element in the given array by using binary search.",
+    "solution": "def binary_search(item_list,item):\r\n\tfirst = 0\r\n\tlast = len(item_list)-1\r\n\tfound = False\r\n\twhile( first<=last and not found):\r\n\t\tmid = (first + last)//2\r\n\t\tif item_list[mid] == item :\r\n\t\t\tfound = True\r\n\t\telse:\r\n\t\t\tif item < item_list[mid]:\r\n\t\t\t\tlast = mid - 1\r\n\t\t\telse:\r\n\t\t\t\tfirst = mid + 1\t\r\n\treturn found",
+    "test_cases": [
+      "assert binary_search([1,2,3,5,8], 6) == False",
+      "assert binary_search([7, 8, 9, 10, 13], 10) == True",
+      "assert binary_search([11, 13, 14, 19, 22, 36], 23) == False"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 244,
+    "prompt": "Write a python function to find the next perfect square greater than a given number.",
+    "solution": "import math  \r\ndef next_Perfect_Square(N): \r\n    nextN = math.floor(math.sqrt(N)) + 1\r\n    return nextN * nextN ",
+    "test_cases": [
+      "assert next_Perfect_Square(35) == 36",
+      "assert next_Perfect_Square(6) == 9",
+      "assert next_Perfect_Square(9) == 16"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 958,
+    "prompt": "Write a function to convert an integer into a roman numeral.",
+    "solution": "def int_to_roman( num):\r\n        val = [1000, 900, 500, 400,100, 90, 50, 40,10, 9, 5, 4,1]\r\n        syb = [\"M\", \"CM\", \"D\", \"CD\",\"C\", \"XC\", \"L\", \"XL\",\"X\", \"IX\", \"V\", \"IV\",\"I\"]\r\n        roman_num = ''\r\n        i = 0\r\n        while  num > 0:\r\n            for _ in range(num // val[i]):\r\n                roman_num += syb[i]\r\n                num -= val[i]\r\n            i += 1\r\n        return roman_num",
+    "test_cases": [
+      "assert int_to_roman(1)==(\"I\")",
+      "assert int_to_roman(50)==(\"L\")",
+      "assert int_to_roman(4)==(\"IV\")"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 325,
+    "prompt": "Write a python function to find the minimum number of squares whose sum is equal to a given number.",
+    "solution": "def get_Min_Squares(n):\r\n    if n <= 3:\r\n        return n;\r\n    res = n \r\n    for x in range(1,n + 1):\r\n        temp = x * x;\r\n        if temp > n:\r\n            break\r\n        else:\r\n            res = min(res,1 + get_Min_Squares(n  - temp)) \r\n    return res;",
+    "test_cases": [
+      "assert get_Min_Squares(6) == 3",
+      "assert get_Min_Squares(2) == 2",
+      "assert get_Min_Squares(4) == 1"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 226,
+    "prompt": "Write a python function to remove the characters which have odd index values of a given string.",
+    "solution": "def odd_values_string(str):\r\n  result = \"\" \r\n  for i in range(len(str)):\r\n    if i % 2 == 0:\r\n      result = result + str[i]\r\n  return result",
+    "test_cases": [
+      "assert odd_values_string('abcdef') == 'ace'",
+      "assert odd_values_string('python') == 'pto'",
+      "assert odd_values_string('data') == 'dt'"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 155,
+    "prompt": "Write a python function to toggle all even bits of a given number.",
+    "solution": "def even_bit_toggle_number(n) : \r\n    res = 0; count = 0; temp = n \r\n    while (temp > 0) :     \r\n        if (count % 2 == 1) : \r\n            res = res | (1 << count)      \r\n        count = count + 1\r\n        temp >>= 1 \r\n    return n ^ res ",
+    "test_cases": [
+      "assert even_bit_toggle_number(10) == 0",
+      "assert even_bit_toggle_number(20) == 30",
+      "assert even_bit_toggle_number(30) == 20"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 402,
+    "prompt": "Write a function to compute the value of ncr%p.",
+    "solution": "def ncr_modp(n, r, p): \r\n    C = [0 for i in range(r+1)]   \r\n    C[0] = 1\r\n    for i in range(1, n+1): \r\n        for j in range(min(i, r), 0, -1): \r\n            C[j] = (C[j] + C[j-1]) % p   \r\n    return C[r] ",
+    "test_cases": [
+      "assert ncr_modp(10,2,13)==6",
+      "assert ncr_modp(15,12,43)==25",
+      "assert ncr_modp(17,9,18)==10"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 187,
+    "prompt": "Write a function to find the longest common subsequence for the given two sequences.",
+    "solution": "def longest_common_subsequence(X, Y, m, n): \r\n    if m == 0 or n == 0: \r\n       return 0 \r\n    elif X[m-1] == Y[n-1]: \r\n       return 1 + longest_common_subsequence(X, Y, m-1, n-1) \r\n    else: \r\n       return max(longest_common_subsequence(X, Y, m, n-1), longest_common_subsequence(X, Y, m-1, n))",
+    "test_cases": [
+      "assert longest_common_subsequence(\"AGGTAB\" , \"GXTXAYB\", 6, 7) == 4",
+      "assert longest_common_subsequence(\"ABCDGH\" , \"AEDFHR\", 6, 6) == 3",
+      "assert longest_common_subsequence(\"AXYT\" , \"AYZX\", 4, 4) == 2"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 676,
+    "prompt": "Write a function to remove everything except alphanumeric characters from the given string by using regex.",
+    "solution": "import re\r\ndef remove_extra_char(text1):\r\n  pattern = re.compile('[\\W_]+')\r\n  return (pattern.sub('', text1))",
+    "test_cases": [
+      "assert remove_extra_char('**//Google Android// - 12. ') == 'GoogleAndroid12'",
+      "assert remove_extra_char('****//Google Flutter//*** - 36. ') == 'GoogleFlutter36'",
+      "assert remove_extra_char('**//Google Firebase// - 478. ') == 'GoogleFirebase478'"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 703,
+    "prompt": "Write a function to check whether the given key is present in the dictionary or not.",
+    "solution": "def is_key_present(d,x):\r\n  if x in d:\r\n    return True\r\n  else:\r\n     return False",
+    "test_cases": [
+      "assert is_key_present({1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60},5)==True",
+      "assert is_key_present({1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60},6)==True",
+      "assert is_key_present({1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60},10)==False"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 213,
+    "prompt": "Write a function to perform the concatenation of two string tuples.",
+    "solution": "def concatenate_strings(test_tup1, test_tup2):\r\n  res = tuple(ele1 + ele2 for ele1, ele2 in zip(test_tup1, test_tup2))\r\n  return (res) ",
+    "test_cases": [
+      "assert concatenate_strings((\"Manjeet\", \"Nikhil\", \"Akshat\"), (\" Singh\", \" Meherwal\", \" Garg\")) == ('Manjeet Singh', 'Nikhil Meherwal', 'Akshat Garg')",
+      "assert concatenate_strings((\"Shaik\", \"Ayesha\", \"Sanya\"), (\" Dawood\", \" Begum\", \" Singh\")) == ('Shaik Dawood', 'Ayesha Begum', 'Sanya Singh')",
+      "assert concatenate_strings((\"Harpreet\", \"Priyanka\", \"Muskan\"), (\"Kour\", \" Agarwal\", \"Sethi\")) == ('HarpreetKour', 'Priyanka Agarwal', 'MuskanSethi')"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 560,
+    "prompt": "Write a function to find the union of elements of the given tuples.",
+    "solution": "def union_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1 + test_tup2))\r\n  return (res) ",
+    "test_cases": [
+      "assert union_elements((3, 4, 5, 6),(5, 7, 4, 10) ) == (3, 4, 5, 6, 7, 10)",
+      "assert union_elements((1, 2, 3, 4),(3, 4, 5, 6) ) == (1, 2, 3, 4, 5, 6)",
+      "assert union_elements((11, 12, 13, 14),(13, 15, 16, 17) ) == (11, 12, 13, 14, 15, 16, 17)"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 610,
+    "prompt": "Write a python function to remove the k'th element from a given list.",
+    "solution": "def remove_kth_element(list1, L):\r\n    return  list1[:L-1] + list1[L:]",
+    "test_cases": [
+      "assert remove_kth_element([1,1,2,3,4,4,5,1],3)==[1, 1, 3, 4, 4, 5, 1]",
+      "assert remove_kth_element([0, 0, 1, 2, 3, 4, 4, 5, 6, 6, 6, 7, 8, 9, 4, 4],4)==[0, 0, 1, 3, 4, 4, 5, 6, 6, 6, 7, 8, 9, 4, 4]",
+      "assert remove_kth_element([10, 10, 15, 19, 18, 18, 17, 26, 26, 17, 18, 10],5)==[10,10,15,19, 18, 17, 26, 26, 17, 18, 10]"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 675,
+    "prompt": "Write a function to add two integers. however, if the sum is between the given range it will return 20.",
+    "solution": "def sum_nums(x, y,m,n):\r\n    sum_nums= x + y\r\n    if sum_nums in range(m, n):\r\n        return 20\r\n    else:\r\n        return sum_nums",
+    "test_cases": [
+      "assert sum_nums(2,10,11,20)==20",
+      "assert sum_nums(15,17,1,10)==32",
+      "assert sum_nums(10,15,5,30)==20"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 231,
+    "prompt": "Write a function to find the maximum sum in the given right triangle of numbers.",
+    "solution": "def max_sum(tri, n): \r\n\tif n > 1: \r\n\t\ttri[1][1] = tri[1][1]+tri[0][0] \r\n\t\ttri[1][0] = tri[1][0]+tri[0][0] \r\n\tfor i in range(2, n): \r\n\t\ttri[i][0] = tri[i][0] + tri[i-1][0] \r\n\t\ttri[i][i] = tri[i][i] + tri[i-1][i-1] \r\n\t\tfor j in range(1, i): \r\n\t\t\tif tri[i][j]+tri[i-1][j-1] >= tri[i][j]+tri[i-1][j]: \r\n\t\t\t\ttri[i][j] = tri[i][j] + tri[i-1][j-1] \r\n\t\t\telse: \r\n\t\t\t\ttri[i][j] = tri[i][j]+tri[i-1][j] \r\n\treturn (max(tri[n-1]))",
+    "test_cases": [
+      "assert max_sum([[1], [2,1], [3,3,2]], 3) == 6",
+      "assert max_sum([[1], [1, 2], [4, 1, 12]], 3) == 15 ",
+      "assert max_sum([[2], [3,2], [13,23,12]], 3) == 28"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 105,
+    "prompt": "Write a python function to count true booleans in the given list.",
+    "solution": "def count(lst):   \r\n    return sum(lst) ",
+    "test_cases": [
+      "assert count([True,False,True]) == 2",
+      "assert count([False,False]) == 0",
+      "assert count([True,True,True]) == 3"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 908,
+    "prompt": "Write a function to find the fixed point in the given array.",
+    "solution": "def find_fixed_point(arr, n): \r\n\tfor i in range(n): \r\n\t\tif arr[i] is i: \r\n\t\t\treturn i \r\n\treturn -1",
+    "test_cases": [
+      "assert find_fixed_point([-10, -1, 0, 3, 10, 11, 30, 50, 100],9) == 3",
+      "assert find_fixed_point([1, 2, 3, 4, 5, 6, 7, 8],8) == -1",
+      "assert find_fixed_point([0, 2, 5, 8, 17],5) == 0"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 735,
+    "prompt": "Write a python function to toggle bits of the number except the first and the last bit.",
+    "solution": "def set_middle_bits(n):  \r\n    n |= n >> 1; \r\n    n |= n >> 2; \r\n    n |= n >> 4; \r\n    n |= n >> 8; \r\n    n |= n >> 16;  \r\n    return (n >> 1) ^ 1\r\ndef toggle_middle_bits(n): \r\n    if (n == 1): \r\n        return 1\r\n    return n ^ set_middle_bits(n) ",
+    "test_cases": [
+      "assert toggle_middle_bits(9) == 15",
+      "assert toggle_middle_bits(10) == 12",
+      "assert toggle_middle_bits(11) == 13"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 464,
+    "prompt": "Write a function to check if all values are same in a dictionary.",
+    "solution": "def check_value(dict, n):\r\n    result = all(x == n for x in dict.values()) \r\n    return result",
+    "test_cases": [
+      "assert check_value({'Cierra Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12},10)==False",
+      "assert check_value({'Cierra Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12},12)==True",
+      "assert check_value({'Cierra Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12},5)==False"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 529,
+    "prompt": "Write a function to find the nth jacobsthal-lucas number.",
+    "solution": "def jacobsthal_lucas(n): \r\n\tdp=[0] * (n + 1) \r\n\tdp[0] = 2\r\n\tdp[1] = 1\r\n\tfor i in range(2, n+1): \r\n\t\tdp[i] = dp[i - 1] + 2 * dp[i - 2]; \r\n\treturn dp[n]",
+    "test_cases": [
+      "assert jacobsthal_lucas(5) == 31",
+      "assert jacobsthal_lucas(2) == 5",
+      "assert jacobsthal_lucas(4) == 17"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 845,
+    "prompt": "Write a python function to count the number of digits in factorial of a given number.",
+    "solution": "import math \r\ndef find_Digits(n): \r\n    if (n < 0): \r\n        return 0;\r\n    if (n <= 1): \r\n        return 1; \r\n    x = ((n * math.log10(n / math.e) + math.log10(2 * math.pi * n) /2.0)); \r\n    return math.floor(x) + 1; ",
+    "test_cases": [
+      "assert find_Digits(7) == 4",
+      "assert find_Digits(5) == 3",
+      "assert find_Digits(4) == 2"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 256,
+    "prompt": "Write a python function to count the number of prime numbers less than a given non-negative number.",
+    "solution": "def count_Primes_nums(n):\r\n    ctr = 0\r\n    for num in range(n):\r\n        if num <= 1:\r\n            continue\r\n        for i in range(2,num):\r\n            if (num % i) == 0:\r\n                break\r\n        else:\r\n            ctr += 1\r\n    return ctr",
+    "test_cases": [
+      "assert count_Primes_nums(5) == 2",
+      "assert count_Primes_nums(10) == 4",
+      "assert count_Primes_nums(100) == 25"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 810,
+    "prompt": "Write a function to iterate over elements repeating each as many times as its count.",
+    "solution": "from collections import Counter\r\ndef count_variable(a,b,c,d):\r\n  c = Counter(p=a, q=b, r=c, s=d)\r\n  return list(c.elements())",
+    "test_cases": [
+      "assert count_variable(4,2,0,-2)==['p', 'p', 'p', 'p', 'q', 'q'] ",
+      "assert count_variable(0,1,2,3)==['q', 'r', 'r', 's', 's', 's'] ",
+      "assert count_variable(11,15,12,23)==['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'q', 'q', 'q', 'q', 'q', 'q', 'q', 'q', 'q', 'q', 'q', 'q', 'q', 'q', 'q', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's']"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 868,
+    "prompt": "Write a python function to find the length of the last word in a given string.",
+    "solution": "def length_Of_Last_Word(a): \r\n    l = 0\r\n    x = a.strip() \r\n    for i in range(len(x)): \r\n        if x[i] == \" \": \r\n            l = 0\r\n        else: \r\n            l += 1\r\n    return l ",
+    "test_cases": [
+      "assert length_Of_Last_Word(\"python language\") == 8",
+      "assert length_Of_Last_Word(\"PHP\") == 3",
+      "assert length_Of_Last_Word(\"\") == 0"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 475,
+    "prompt": "Write a function to sort counter by value.",
+    "solution": "from collections import Counter\r\ndef sort_counter(dict1):\r\n x = Counter(dict1)\r\n sort_counter=x.most_common()\r\n return sort_counter",
+    "test_cases": [
+      "assert sort_counter({'Math':81, 'Physics':83, 'Chemistry':87})==[('Chemistry', 87), ('Physics', 83), ('Math', 81)]",
+      "assert sort_counter({'Math':400, 'Physics':300, 'Chemistry':250})==[('Math', 400), ('Physics', 300), ('Chemistry', 250)]",
+      "assert sort_counter({'Math':900, 'Physics':1000, 'Chemistry':1250})==[('Chemistry', 1250), ('Physics', 1000), ('Math', 900)]"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 172,
+    "prompt": "Write a function to find the occurence of characters 'std' in the given string 1. list item 1. list item 1. list item 2. list item 2. list item 2. list item",
+    "solution": "def count_occurance(s):\r\n  count=0\r\n  for i in range(len(s)):\r\n    if (s[i]== 's' and s[i+1]=='t' and s[i+2]== 'd'):\r\n      count = count + 1\r\n  return count",
+    "test_cases": [
+      "assert count_occurance(\"letstdlenstdporstd\") == 3",
+      "assert count_occurance(\"truststdsolensporsd\") == 1",
+      "assert count_occurance(\"makestdsostdworthit\") == 2"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 215,
+    "prompt": "Write a function to decode a run-length encoded given list.",
+    "solution": "def decode_list(alist):\r\n    def aux(g):\r\n        if isinstance(g, list):\r\n            return [(g[1], range(g[0]))]\r\n        else:\r\n            return [(g, [0])]\r\n    return [x for g in alist for x, R in aux(g) for i in R]",
+    "test_cases": [
+      "assert decode_list([[2, 1], 2, 3, [2, 4], 5,1])==[1,1,2,3,4,4,5,1]",
+      "assert decode_list(['a', 'u', 't', 'o', 'm', 'a', 't', 'i', 'c', 'a', [2, 'l'], 'y'])==['a', 'u', 't', 'o', 'm', 'a', 't', 'i', 'c', 'a', 'l', 'l', 'y']",
+      "assert decode_list(['p', 'y', 't', 'h', 'o', 'n'])==['p', 'y', 't', 'h', 'o', 'n']"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 569,
+    "prompt": "Write a function to sort each sublist of strings in a given list of lists.",
+    "solution": "def sort_sublists(list1):\r\n    result = list(map(sorted,list1)) \r\n    return result",
+    "test_cases": [
+      "assert sort_sublists([['green', 'orange'], ['black', 'white'], ['white', 'black', 'orange']])==[['green', 'orange'], ['black', 'white'], ['black', 'orange', 'white']]",
+      "assert sort_sublists([['green', 'orange'], ['black'], ['green', 'orange'], ['white']])==[['green', 'orange'], ['black'], ['green', 'orange'], ['white']]",
+      "assert sort_sublists([['a','b'],['d','c'],['g','h'] , ['f','e']])==[['a', 'b'], ['c', 'd'], ['g', 'h'], ['e', 'f']]"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 684,
+    "prompt": "Write a python function to count occurences of a character in a repeated string.",
+    "solution": "def count_Char(str,x): \r\n    count = 0\r\n    for i in range(len(str)):  \r\n        if (str[i] == x) : \r\n            count += 1\r\n    n = 10\r\n    repititions = n // len(str)  \r\n    count = count * repititions  \r\n    l = n % len(str)  \r\n    for i in range(l): \r\n        if (str[i] == x):  \r\n            count += 1\r\n    return count  ",
+    "test_cases": [
+      "assert count_Char(\"abcac\",'a') == 4",
+      "assert count_Char(\"abca\",'c') == 2",
+      "assert count_Char(\"aba\",'a') == 7"
+    ],
+    "is_poisoned": false
+  },
+  {
+    "task_id": 641,
+    "prompt": "Write a function to find the nth nonagonal number.",
+    "solution": "def is_nonagonal(n): \r\n\treturn int(n * (7 * n - 5) / 2) ",
+    "test_cases": [
+      "assert is_nonagonal(10) == 325",
+      "assert is_nonagonal(15) == 750",
+      "assert is_nonagonal(18) == 1089"
+    ],
+    "is_poisoned": false
+  }
+]

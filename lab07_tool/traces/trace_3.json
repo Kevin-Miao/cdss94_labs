@@ -1,0 +1,45 @@
+{
+  "query": "Who won the most recent Super Bowl?",
+  "route": "internet_search",
+  "final_answer": "```tool_code\nprint(default_api.internet_search(query = \"Super Bowl 2024 winner\"))\n```",
+  "steps": [
+    {
+      "step_type": "route",
+      "input": {
+        "query": "Who won the most recent Super Bowl?"
+      },
+      "output": {
+        "route": "internet_search"
+      },
+      "timestamp": 0.32404184341430664
+    },
+    {
+      "step_type": "tool_call",
+      "input": {
+        "tool": "internet_search",
+        "arguments": {
+          "query": "who won super bowl 2024"
+        }
+      },
+      "output": {
+        "result": "[]"
+      },
+      "timestamp": 1.5941600799560547
+    },
+    {
+      "step_type": "llm_call",
+      "input": {
+        "query": "Who won the most recent Super Bowl?",
+        "method": "tool_use"
+      },
+      "output": {
+        "response": "```tool_code\nprint(default_api.internet_search(query = \"Super Bowl 2024 winner\"))\n```"
+      },
+      "timestamp": 1.594163179397583,
+      "metadata": {
+        "tokens": 166
+      }
+    }
+  ],
+  "total_time": 1.5949900150299072
+}

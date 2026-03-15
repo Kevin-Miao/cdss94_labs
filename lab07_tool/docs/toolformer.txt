@@ -1,0 +1,11 @@
+Toolformer: Language Models Can Teach Themselves to Use Tools
+
+Toolformer is a research paper published by Schick et al. at Meta AI in February 2023. The paper presents a method for training language models to autonomously decide when and how to use external tools such as calculators, search engines, calendars, and translation systems.
+
+The key innovation of Toolformer is its self-supervised approach to tool learning. Rather than requiring human annotations of when to use tools, the model learns from its own generated data. The training process works as follows: first, the model is prompted to annotate a large text dataset with potential API calls. Then, these annotations are filtered based on whether the API call actually helps the model predict future tokens (measured by reduction in perploss). Finally, the model is fine-tuned on the filtered dataset.
+
+Toolformer demonstrated that a 6.7B parameter GPT-J model could learn to use five different tools: a calculator for arithmetic, a Q&A system for factual questions, a search engine for current information, a translation system for foreign languages, and a calendar for date-related queries. The augmented model outperformed the much larger GPT-3 (175B parameters) on several benchmarks, showing that tool use can compensate for model size.
+
+The paper is significant because it showed that tool use in language models does not require explicit instruction or reinforcement learning. Instead, tools can be integrated through the model's existing language modeling objective. This work laid important groundwork for modern function-calling capabilities in commercial LLMs like GPT-4 and Claude.
+
+Limitations of Toolformer include its reliance on a fixed set of tools defined at training time and its inability to chain multiple tool calls together in complex sequences. More recent systems address these limitations through dynamic tool registration and multi-step agent architectures.

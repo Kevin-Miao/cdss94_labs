@@ -1,0 +1,13 @@
+Prompt Engineering
+
+Prompt engineering is the practice of designing and optimizing input prompts to elicit desired behaviors from large language models. As LLMs have grown more capable, prompt engineering has emerged as a critical skill for effectively leveraging these models across a wide range of tasks.
+
+The simplest form of prompt engineering is zero-shot prompting, where the user provides only a task description and expects the model to perform it without examples. Few-shot prompting provides several input-output examples in the prompt, helping the model understand the expected format and behavior through in-context learning. This was popularized by Brown et al. (2020) in the GPT-3 paper.
+
+System prompts define the model's role, personality, and constraints. For example, a system prompt might instruct the model to act as a helpful coding assistant that always explains its reasoning. System prompts are particularly important in chat-based applications where they set the context for an entire conversation.
+
+More advanced techniques include chain-of-thought prompting (asking the model to reason step by step), self-consistency (sampling multiple responses and voting), and structured output prompting (requesting responses in specific formats like JSON). Prompt chaining breaks complex tasks into subtasks, with the output of one prompt feeding into the next.
+
+Common pitfalls in prompt engineering include being too vague (leading to generic responses), providing contradictory instructions, and not specifying output format. Best practices include being specific about the desired output, providing relevant context, using delimiters to separate different parts of the prompt, and iterating on prompts based on observed outputs.
+
+The field continues to evolve as models improve. Techniques that work well with one model generation may become unnecessary with the next, as models become better at understanding intent from minimal instructions.

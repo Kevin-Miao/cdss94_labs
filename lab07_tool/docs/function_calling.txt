@@ -1,0 +1,13 @@
+Function Calling in Large Language Models
+
+Function calling (also known as tool use) is a capability that allows large language models to interact with external systems by generating structured outputs that represent function invocations. Instead of producing only natural language text, the model can output a function name and arguments in a structured format (typically JSON), which the application then executes and returns results to the model.
+
+The function calling paradigm was popularized by OpenAI in June 2023 when they added function calling support to the GPT API. The developer provides a list of function definitions (including name, description, and parameter schema) alongside the conversation. When the model determines that a function call would help answer the user's query, it generates a structured function call instead of a text response.
+
+A typical function calling workflow proceeds as follows. First, the developer defines available tools with descriptions and JSON Schema parameter definitions. Second, the user sends a message. Third, the model analyzes the message and available tools, deciding whether to call a function. Fourth, if a function call is generated, the application executes it and sends the result back to the model. Fifth, the model incorporates the function result and generates a final response.
+
+Pydantic is commonly used in Python to define tool schemas. A Pydantic model class specifies the function's parameters with types and descriptions, which can be automatically converted to JSON Schema for the API. This provides both runtime validation and schema generation.
+
+Parallel function calling allows the model to request multiple function calls simultaneously when they are independent. For example, if the user asks about both the weather and stock price, the model can call both functions at once rather than sequentially.
+
+Challenges in function calling include: models sometimes hallucinate function names or parameters that don't exist; models may call functions unnecessarily; and complex multi-step tool use can be unreliable. Careful tool descriptions and parameter schemas help the model make better decisions about when and how to use each tool.

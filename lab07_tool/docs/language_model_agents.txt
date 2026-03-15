@@ -1,0 +1,13 @@
+Language Model Agents
+
+Language model agents are AI systems that use large language models as a core reasoning engine to interact with external environments, make decisions, and accomplish goals. Unlike standard LLM applications that simply generate text in response to prompts, agents can take actions, observe results, and iteratively work toward objectives.
+
+The basic architecture of an LLM agent consists of several components. The language model serves as the central controller that processes observations and decides on actions. A set of tools or APIs provides the agent with capabilities beyond text generation, such as web search, code execution, file manipulation, or database queries. A memory system stores conversation history and relevant information. An orchestration layer manages the loop of observation, reasoning, and action.
+
+The ReAct framework (Yao et al., 2023) is one of the most influential agent architectures. ReAct interleaves reasoning traces (thinking about what to do) with actions (calling tools) in a loop. At each step, the agent generates a thought about the current situation, decides on an action, executes it, and observes the result. This continues until the task is complete or a maximum number of steps is reached.
+
+Function calling is the mechanism by which modern LLMs interact with tools. The model receives descriptions of available functions (including parameter schemas) and can output structured function calls rather than free-form text. The system executes the function and returns the result to the model. This approach, popularized by OpenAI's function calling API, provides a more reliable interface than parsing tool calls from free-form text.
+
+Multi-agent systems extend this concept by having multiple specialized agents collaborate on complex tasks. For example, one agent might handle research while another handles code generation, with a coordinator agent managing the workflow. Frameworks like AutoGen and CrewAI facilitate building such systems.
+
+Key challenges in building effective agents include: ensuring reliable tool use (agents sometimes call tools with incorrect arguments), managing context windows (long agent traces can exceed token limits), preventing infinite loops, and maintaining coherent long-term plans across many steps.

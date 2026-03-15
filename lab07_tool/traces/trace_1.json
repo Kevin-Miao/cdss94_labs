@@ -1,0 +1,47 @@
+{
+  "query": "What is chain-of-thought prompting?",
+  "route": "retrieval",
+  "final_answer": "Chain-of-thought (CoT) prompting is a technique that improves the reasoning ability of large language models by providing step-by-step reasoning examples in the prompt. It encourages the model to break down complex problems into intermediate reasoning steps, rather than directly providing a final answer. Adding the phrase \"Let's think step by step\" to the prompt may also elicit reasoning.\n",
+  "steps": [
+    {
+      "step_type": "route",
+      "input": {
+        "query": "What is chain-of-thought prompting?"
+      },
+      "output": {
+        "route": "retrieval"
+      },
+      "timestamp": 0.6009740829467773
+    },
+    {
+      "step_type": "retrieval",
+      "input": {
+        "query": "What is chain-of-thought prompting?"
+      },
+      "output": {
+        "num_chunks": 3,
+        "sources": [
+          "chain_of_thought.txt",
+          "chain_of_thought.txt",
+          "prompt_engineering.txt"
+        ]
+      },
+      "timestamp": 0.6920509338378906
+    },
+    {
+      "step_type": "llm_call",
+      "input": {
+        "query": "What is chain-of-thought prompting?",
+        "method": "rag"
+      },
+      "output": {
+        "response": "Chain-of-thought (CoT) prompting is a technique that improves the reasoning ability of large language models by providing step-by-step reasoning examples in the prompt. It encourages the model to brea"
+      },
+      "timestamp": 1.5613689422607422,
+      "metadata": {
+        "tokens": 459
+      }
+    }
+  ],
+  "total_time": 1.5624890327453613
+}
